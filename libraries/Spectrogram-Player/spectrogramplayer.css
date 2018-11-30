@@ -1,0 +1,15 @@
+.sp-viewer {
+  position: relative;
+  background-repeat: no-repeat;
+}
+
+.sp-axis {
+  position: absolute;
+}
+
+.sp-timeBar {
+  width: 1px;
+  height: 100%;
+  position: absolute;
+  background-color: black;
+}

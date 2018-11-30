@@ -1,0 +1,380 @@
+html, body{
+  height:100%;
+}
+
+body{
+  background-color:#f1f0ea;
+}
+
+.navbar-default{
+  background: none;
+  border:none;
+  box-shadow: none;
+  webkit-box-shadow: none
+}
+
+.info-text{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:10% 0 10% 0;
+  width:80%;
+  margin:0 auto;
+  text-align: center;
+}
+
+.info-text a{
+  font-size:20px;
+  color:#f28c3b;
+}
+
+.info-text a:hover{
+  text-decoration:none;
+}
+
+@media (min-width: 992px){
+
+  .boxes{
+    display:flex;
+  }
+
+  .boxes > .col-md-4{
+    flex:1
+  }
+
+  .boxes > .col-md-4 > .info-box{
+    width:70%;
+  }
+
+}
+
+@media (max-width: 991px){
+
+  .boxes > .col-md-4{
+    margin-top:3%;
+  }
+
+  .boxes > .col-md-4 > .info-box{
+    width:60%;
+  }
+
+}
+
+.boxes > .col-md-4 > .info-box{
+  margin: 0 auto;
+  text-align:center;
+  padding:2% 3% 7% 3%;
+  background-color:#2d232e;
+  height:100%;
+}
+
+.boxes > .col-md-4 > .info-box > h3, .boxes > .col-md-4 > .info-box > a {
+  color:#E0DDCF;
+}
+
+.boxes > .col-md-4 > .info-box > p{
+  font-size:15px;
+  color:#afa783;
+}
+
+.selected{
+  font-weight:bold;
+}
+
+.classification-box{
+  width:80%;
+  margin:5% auto;
+  display:flex;
+}
+
+.side-bar{
+  background-color:#e0ded1;
+  text-align:center;
+  height:95%;
+  padding:2%;
+  display:flex;
+  flex-direction: column;
+}
+
+.side-bar .btn{
+  background-color:#89835d;
+  margin:auto auto 0 auto;
+  width:50%;
+  align-self: flex-end;
+}
+
+.side-bar > h3{
+
+  margin-top:0;
+  padding-top:3%;
+
+}
+
+#bat-species > label:nth-of-type(even), #bat-species > input:nth-of-type(even){
+
+  float:right;
+
+}
+
+#bat-species > label:nth-of-type(odd), #bat-species > input:nth-of-type(odd){
+
+  float:left;
+
+}
+
+#bat-species > table{
+
+  text-align:left;
+  width:100%;
+
+}
+
+#bat-species > table tr > td:nth-of-type(odd){
+
+  width:7%;
+  text-align:center;
+
+}
+
+#spectrogram{
+  width:100%;
+}
+
+.user-options .bat-specie{
+  display:inline-block;
+  width:45%;
+}
+
+.central-box{
+  width:60%;
+  background-color:#e0ded1;
+  margin:5% auto;
+}
+
+.profile-header{
+  background-color:#cbc8b3;
+}
+
+.profile-header > h3{
+  display:inline-block;
+}
+
+footer{
+  background-color:#e0ded1;
+  width:100%;
+  min-height:30%;
+  margin-top:10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+footer .footer-section{
+  text-align:center;
+}
+
+footer .footer-section h4{
+  color:#474448;
+}
+
+footer .footer-section ul{
+
+  list-style: none;
+  padding-left: 0;
+
+}
+
+.disclaimer{
+  text-align: center;
+}
+
+.box-container{
+  height:100%;
+}
+
+.form-box{
+  margin-top:4%;
+  background-color:#e0ded1;
+  height:80%;
+}
+
+.form-box h2{
+  text-align:center;
+}
+
+.form-box form{
+  width:50%;
+  margin:0 auto;
+}
+
+.form-box p{
+  font-weight:bold;
+}
+
+.form-box .form-control{
+  margin-bottom:7%;
+}
+
+.form-box .btn{
+  width:100%;
+  margin-bottom:7%;
+}
+
+.form-box a{
+  margin:0 auto;
+}
+
+.login-box{
+  height:85%;
+}
+
+#mode-button-container{
+  text-align:center;
+}
+
+#mode-button{
+  cursor:pointer;
+}
+
+.signup-box{
+  display:none;
+  height:85%;
+}
+
+#warning-label{
+  text-align:center;
+  color:red;
+  position:absolute;
+  width:100%;
+}
+
+#google-signin > div{
+  margin:0 auto;
+}
+
+.authorization-box{
+  text-align:center;
+}
+
+.authorization-box > a{
+  color:black;
+}
+
+.authorization-box > a:hover{
+  text-decoration:none;
+}
+
+.authorization-box > .btn{
+  display:inline-block;
+}
+
+.overlay {
+  display:none;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  background: rgba(128,128,128,0.7);
+}
+
+.overlay > .upload-container{
+  width: 50%;
+  height: 80%;
+  margin: 65px auto;
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 25px;
+  opacity: 1;
+}
+
+.overlay > .upload-container h2{
+  text-align:center;
+}
+
+.overlay > .upload-container #bat-call{
+  display: none;
+}
+
+.overlay > .upload-container > form{
+  position:relative;
+  height:100%;
+}
+
+.overlay > .upload-container .options{
+  display:flex;
+  justify-content: space-between;
+  position:absolute;
+  bottom:0;
+  width:100%;
+}
+
+.overlay > .upload-container .options > button{
+}
+
+.stop-scrolling {
+  height: 100%;
+  overflow: hidden;
+}
+
+@media (min-width: 778px){
+  .navbar-brand{
+    display:none;
+  }
+  .navbar-nav{
+    display:flex;
+    width:100%;
+    justify-content:space-between;
+  }
+  .navbar-default .navbar-nav > li > a{
+    color:#474448;
+    font-size:15px;
+    cursor:pointer;
+  }
+  #brand-title{
+    font-size:22px;
+  }
+}
+
+.batanalyzer-download{
+  text-align:center;
+}
+
+.batanalyzer-download > .btn{
+
+  position:absolute;
+  right:47%;
+  bottom:5%;
+
+}
+
+.content{
+  min-height:80%;
+}
+
+.map{
+  box-shadow: 0.1px 0.1px 0.1px #888888
+}
+
+#ol-popup{
+  min-width:300px;
+}
+
+.data-container{
+
+  height:90%;
+
+}
+
+.data-container > .row, .data-container > .row > .col-md-9, .data-container > .row > .col-md-3{
+
+  height:100%;
+
+}
+
+.data-container > .row > .col-md-9 > .map{
+
+  height:95%;
+
+}
