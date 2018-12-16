@@ -152,6 +152,7 @@ body{
 
 .central-box > .row{
   display:flex;
+  height:100%;
 }
 
 .profile-header{
