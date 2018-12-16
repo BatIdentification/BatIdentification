@@ -146,16 +146,24 @@ body{
 }
 
 .central-box{
-  width:60%;
-  background-color:#e0ded1;
-  margin:5% auto;
+  width:80%;
+  margin:5% auto 0 auto;
+}
+
+.central-box > .row{
+  display:flex;
 }
 
 .profile-header{
   background-color:#cbc8b3;
+  height:20%;
 }
 
-.profile-header > h3{
+.profile-header > .col-md-12{
+  height:100%;
+}
+
+.profile-header > .col-md-12 h3{
   display:inline-block;
 }
 
@@ -350,7 +358,7 @@ footer .footer-section ul{
 }
 
 .content{
-  min-height:80%;
+  height:80%;
 }
 
 .map{
@@ -377,4 +385,82 @@ footer .footer-section ul{
 
   height:95%;
 
+}
+
+.uploaded-calls > .col-md-12{
+
+  padding:0;
+
+}
+
+.uploaded-calls{
+  max-height: 80%;
+  overflow: scroll;
+}
+
+.uploaded-call{
+  padding:0 3% 0 3%;
+}
+
+.uploaded-call:nth-child(even){
+  background-color:#b8b294;
+}
+
+.uploaded-call > h4{
+
+  display:inline-block;
+
+}
+
+.uploaded-call .fas{
+
+  float:right;
+  padding:0 2% 0 2%;
+
+}
+
+.uploaded-call > .row{
+  display:flex;
+}
+
+.call-actions{
+  display:flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.side-box{
+  width:20%;
+}
+
+.user-content{
+  background-color:#e0ded1;
+}
+
+.user-stats{
+  background-color:#d6d3c2;
+}
+
+.user-stats h3{
+  width:100%;
+  text-align:center;
+}
+
+.user-stats .stat{
+  font-size: 16px;
+}
+
+.user-stats .stat > b{
+  font-size: 30px;
+  font-weight: 500;
+}
+
+.user-stats .stat-sub > b{
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.user-stats .stat-sub{
+  font-style: italic;
+  margin-left:4%;
 }
