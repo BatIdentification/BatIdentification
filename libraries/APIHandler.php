@@ -13,7 +13,7 @@
     public function getAccessToken($email, $password){
 
       //CURL variables
-      $url = "https://api.batidentification.loc/token.php";
+      $url = "https://api.batidentification.loc/api/token";
       $data = array('grant_type' => 'password', 'client_id' => $this->client_id, 'client_secret' => $this->client_secret, 'username' => $email, 'password' => $password);
 
       try{

@@ -130,9 +130,9 @@ function setupPage(vectorFeatures){
 
 $(document).ready(function(){
 
-  var apiURL = "https://api." + window.location.hostname + "/";
+  var apiURL = "https://api." + window.location.hostname + "/api/";
 
-  getFeatures(apiURL + "locations", {}, setupPage);
+  getFeatures(apiURL + "calls", {}, setupPage);
 
   $("#submit-btn").click(function(){
 
@@ -146,7 +146,7 @@ $(document).ready(function(){
 
     formData['range'] = $("#date_range").val();
 
-    getFeatures(apiURL + "locations", formData, function(vectorFeatures){
+    getFeatures(apiURL + "calls", formData, function(vectorFeatures){
 
       var vectorSource = new ol.source.Vector({
         features: vectorFeatures

@@ -3,7 +3,7 @@
   session_set_cookie_params(0, '/', '.batidentification.com');
   session_start();
 
-  $url = "https://api.batidentification.loc/upload.php?access_token=" . $_SESSION['access_token'];
+  $url = "https://api.batidentification.loc/api/upload";
 
   if(file_exists($_FILES['bat_call']['tmp_name']) && isset($_POST['date_recorded']) && isset($_POST['location']) ){
 
@@ -11,9 +11,13 @@
 
     $callToUpload = new CurlFile($_FILES['bat_call']['tmp_name'], $_FILES['bat_call']['type'], $_FILES['bat_call']['name']);
 
+    //Split the lag, lng getCoordinates
+
+    list($lat, $lng) = explode(",", $_POST['location']);
+
     //Define the post variables which we are going to send
 
-    $data = array('bat_call' => $callToUpload, 'date_recorded' => $_POST['date_recorded'], 'location' => $_POST['location']);
+    $data = array('bat_call' => $callToUpload, 'date_recorded' => $_POST['date_recorded'], 'lat' => trim($lat), 'lng' => trim($lng));
 
     //Send up the curl request
 
@@ -39,6 +43,7 @@
           "Authorization: Bearer {$_SESSION['access_token']}",
         )
       );
+
       curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
       //Execute and print output

@@ -87,7 +87,7 @@
                             <div class='row'>
                               <div class='col-md-10'>
                                 <h4>{$specie}</h4>
-                                <p>{$call[0]} {$call[3]}</p>
+                                <p><i>{$call[0]}</i> {$call[3]}</p>
                                 <b class='{$verified}'>Verified</b>
                                 <b class='{$analyzed}'>Analyzed</b>
                               </div>
