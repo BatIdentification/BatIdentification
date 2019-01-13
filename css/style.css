@@ -407,9 +407,10 @@ footer .footer-section ul{
   background-color:#b8b294;
 }
 
-.uploaded-call > h4{
+.uploaded-call h4{
 
   display:inline-block;
+  color: black;
 
 }
 
@@ -464,4 +465,9 @@ footer .footer-section ul{
 .user-stats .stat-sub{
   font-style: italic;
   margin-left:4%;
+}
+
+.call-player{
+  width:60%;
+  margin: 0 auto;
 }

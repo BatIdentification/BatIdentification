@@ -48,14 +48,14 @@
       $calls = array();
       $verifiedCalls = 0;
       $analyzedCalls = 0;
-      $stmt = $connection->prepare("SELECT DATE(date_recorded), call_url, classification, address, verified, analyzed FROM bat_calls WHERE user_id = ?");
+      $stmt = $connection->prepare("SELECT id, DATE(date_recorded), call_url, classification, address, verified, analyzed FROM bat_calls WHERE user_id = ?");
       $stmt->bind_param("i", $_SESSION['id']);
       $stmt->execute();
-      $stmt->bind_result($date_recorded, $call_url, $specie, $address, $verified, $analyzed);
+      $stmt->bind_result($id, $date_recorded, $call_url, $specie, $address, $verified, $analyzed);
       while($stmt->fetch()){
           $verifiedCalls += $verified;
           $analyzedCalls += $analyzed;
-          array_push($calls, [$date_recorded, $call_url, ucwords(str_replace("_", " ", $specie)), $address, $verified, $analyzed]);
+          array_push($calls, [$id, $date_recorded, $call_url, ucwords(str_replace("_", " ", $specie)), $address, $verified, $analyzed]);
       }
       $stmt->close();
     ?>
@@ -79,24 +79,22 @@
                 <?php
 
                   foreach($calls as $call){
-                      $specie = $call[2] == '' ? 'Unknown' : $call[2];
-                      $verified = ($call[4] == 1 ? "" : "text-muted");
-                      $analyzed = ($call[5] == 1 ? "" : "text-muted");
+                      $specie = $call[3] == '' ? 'Unknown' : $call[2];
+                      $verified = ($call[5] == 1 ? "" : "text-muted");
+                      $analyzed = ($call[6] == 1 ? "" : "text-muted");
                       echo("
                           <div class='uploaded-call container-fluid'>
                             <div class='row'>
                               <div class='col-md-10'>
-                                <h4>{$specie}</h4>
-                                <p><i>{$call[0]}</i> {$call[3]}</p>
+                                <a href='call?id={$call[0]}'><h4>{$specie}</h4></a>
+                                <p><i>{$call[1]}</i> {$call[4]}</p>
                                 <b class='{$verified}'>Verified</b>
                                 <b class='{$analyzed}'>Analyzed</b>
                               </div>
                               <div class='col-md-2 call-actions'>");
-                      if($call[4]){
-                        echo("<a href='{$call[1]}spectrogram.png'><i class='fas fa-image fa-3x'></i></a>");
-                      }
-                      if($call[5]){
-                        echo("<a href='{$call[1]}time_expansion.wav'><i class='fas fa-file-audio fa-3x'></i></a>");
+                      if($call[6]){
+                        echo("<a href='{$call[2]}spectrogram.png'><i class='fas fa-image fa-3x'></i></a>");
+                        echo("<a href='{$call[2]}time_expansion.wav'><i class='fas fa-file-audio fa-3x'></i></a>");
                       }
                       echo('
                               </div>
