@@ -16,7 +16,8 @@
     */
     function beginSession(){
 
-      session_set_cookie_params(0, '/', '.batidentification.com');
+      session_name("batidentification");
+      session_set_cookie_params(0, '/', '.batidentification.loc');
       session_start();
 
       $_SESSION['username'] = $this->username;

@@ -1,3 +1,8 @@
+<?php
+  session_name("batidentification");
+  session_set_cookie_params(0, '/', '.batidentification.loc');
+  session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
