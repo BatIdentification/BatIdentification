@@ -3,7 +3,6 @@
   include_once("../libraries/dbconnect.php");
   $bat_species = ['common_pipistrelle', 'nathusius_pipistrelle', 'soprano_pipistrelle', 'myotis', 'brown_long_eared', 'lesser_horseshoe', 'leislers_bat', 'unknown'];
 
-  var_dump($_POST);
   if(isset($_POST['confirm-call'])){
     $stmt = $connection->prepare("UPDATE bat_calls SET verified = ? WHERE id = ?");
     $call_id = intval($_POST['call-id']);
