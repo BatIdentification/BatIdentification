@@ -12,7 +12,7 @@
       function unverifiedCalls(){
 
         global $connection;
-        $sql = "SELECT id, call_url FROM bat_calls WHERE verified IS false AND analyzed is true";
+        $sql = "SELECT id, call_url FROM bat_calls WHERE verified IS NULL AND analyzed is true";
         $results = $connection->query($sql);
         return $results;
 
@@ -149,7 +149,7 @@
           </div>
         <?php else: ?>
           <div class="row info-text">
-            <a>There are not bat calls to be classified at the momenent </a>
+            <a>There are no bat calls to be classified at the momenent </a>
           </div>
         <?php endif; ?>
     </div>
