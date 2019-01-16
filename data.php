@@ -37,9 +37,7 @@
 
         </div>
 
-        <div class="col-md-3">
-
-          <div class="side-bar">
+        <div class="col-md-3 side-bar">
 
             <h3> Filter Bat Calls </h3>
 
@@ -119,8 +117,6 @@
             </div>
 
             <button class="btn" id="submit-btn">Filter</button>
-
-          </div>
 
         </div>
 
