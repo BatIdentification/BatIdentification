@@ -13,14 +13,14 @@
     </div>
     <div class="collapse navbar-collapse" id="collapseable">
       <ul class="nav navbar-nav">
-        <li><a id="index" href="/">Home</a></li>
-        <li><a id="about" href="data">Data</a></li>
+        <li><a id="/index" href="/">Home</a></li>
+        <li><a id="about" href="/data">Data</a></li>
         <li><a id="brand-title">BatIdentification</a>
         <li><a href="identify" id="identify">Identify</a></li>
         <?php if(isset($_SESSION['id'])) : ?>
-          <li><a href="profile" id="profile"><?php echo($_SESSION['username']); ?></a></li>
+          <li><a href="/profile" id="profile"><?php echo($_SESSION['username']); ?></a></li>
         <?php else : ?>
-          <li><a href="login" id="login">Login / Signup</a></li>
+          <li><a href="/login" id="login">Login / Signup</a></li>
         <?php endif ?>
       </ul>
     </div>

@@ -1,4 +1,5 @@
 <?php
+  session_name("batidentification");
   session_set_cookie_params(0, '/', '.batidentification.com');
   session_start();
 ?>
@@ -134,7 +135,6 @@
                   <button class="btn bat-specie" name="bat-specie" type="submit" value="1">Nathusius' pipistrelle</button>
                   <button class="btn bat-specie" name="bat-specie" type="submit" value="2">Soprano Pipistrelle</button>
                   <h4><i>Myotis<i></h4>
-                  <p> Myotis bats cannot be identified reliably by their echolocation calls </p>
                   <button class="btn bat-specie" name="bat-specie" type="submit" value="3">Myotis bat</button>
                   <h4>Ungrouped</h4>
                   <button class="btn bat-specie" name="bat-specie" type="submit" value="4">Brown Long Eared</button>
