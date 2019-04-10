@@ -1,10 +1,12 @@
 <?php
 
+  include_once("../libraries/dbconnect.php");
+
   session_name("batidentification");
   session_set_cookie_params(0, '/', '.batidentification.com');
   session_start();
 
-  $url = "https://api.batidentification.loc/api/upload";
+  $url = $api_url . "/api/upload";
 
   if(file_exists($_FILES['bat_call']['tmp_name']) && isset($_POST['date_recorded']) && isset($_POST['location']) ){
 

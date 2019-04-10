@@ -17,11 +17,11 @@
           // Handle error - notify administrator, log to a file, show an error screen, etc.
           echo(mysqli_connect_error());
         }
-        return [$connection, $config['servername'], $config['dbname'], $config['username'], $config['password']];
+        return [$connection, $config['servername'], $config['dbname'], $config['username'], $config['password'], $config["api_url"]];
     }
 
     // Connect to the database
-    list($connection, $dbhost, $dbname, $dbuser, $dbpass) = db_connect();
+    list($connection, $dbhost, $dbname, $dbuser, $dbpass, $api_url) = db_connect();
 
     // Check connection
     if ($connection->connect_error) {
