@@ -1,10 +1,10 @@
 <?php
 
-  include_once("../libraries/dbconnect.php");
-
   session_name("batidentification");
   session_set_cookie_params(0, '/', '.batidentification.com');
   session_start();
+
+  require_once("../libraries/dbconnect.php");
 
   $url = $api_url . "/api/upload";
 
@@ -73,15 +73,15 @@
 
     $data = json_decode($server_output);
 
-    header("Location: ../profile.php?warning=" . rawurlencode($data->error_description));
+    echo('{"error": "' . $data->error_description . '"}');
 
   }elseif(isset($response->success)){
 
-    header("Location: ../profile.php?success");
+    echo ('{"success": "Your call has been uploaded"}');
 
   }else{
 
-    header("Location: ../profile.php?warning=" . rawurlencode("Sorry something went wrong"));
+    echo('{"error": "Sorry something went wrong"}');
 
   }
 

@@ -32,11 +32,7 @@
 
       $(document).ready(function(){
         var getParameter = decodeURIComponent(window.location.search.substr(1));
-        if(getParameter.includes("warning")){
-          notify(getParameter.split("=")[1]);
-        }else if(getParameter.includes("success")){
-          notify("Successfully uploaded call", true)
-        }else if(getParameter.includes("upload")){
+        if(getParameter.includes("upload")){
           $(".overlay").toggle();
           $("body").addClass("stop-scrolling");
         }
@@ -129,7 +125,7 @@
     </div>
     <div class="overlay">
         <div class="upload-container" >
-          <form action="actions/upload_audio.php" method="POST" enctype="multipart/form-data">
+          <form id="upload_call" enctype="multipart/form-data">
               <h2>Upload a new bat call</h2>
               <hr>
               <div class="form-group">
@@ -170,6 +166,30 @@
         $("#cancel-upload").click(function(){
           $(".overlay").toggle();
           $("body").removeClass("stop-scrolling");
+        });
+        $("#upload_call").submit(function (e) {
+          e.preventDefault();
+          $.ajax({
+            url: "actions/upload_audio.php",
+            type: "POST",
+
+            data: new FormData(document.getElementById("upload_call")),
+            cache:false,
+            contentType:false,
+            processData:false,
+          }).done(function(data) {
+            parse = JSON.parse(data);
+            $(".overlay").toggle();
+            $("body").removeClass("stop-scrolling");
+            if(parse['error'] != undefined){
+              notify(parse['error']);
+            }else{
+              notify(parse['success'], true);
+              setTimeout(function(){
+                  location.reload(true)
+              }, 3000);
+            }
+          });
         });
       });
     </script>
