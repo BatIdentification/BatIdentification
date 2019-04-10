@@ -25,14 +25,14 @@
 
     if($call_url == "" || $analyzed == 0){
 
-      header("Location: index");
+      header("Location: ../index");
       die();
 
     }
 
   }else{
 
-    header("Location: index");
+    header("Location: ../index");
     die();
 
   }
