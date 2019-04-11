@@ -114,9 +114,9 @@
             <div class="col-md-12">
                 <span class="stat"><b><?php echo(count($calls));?></b> calls uploaded</span>
                 <br>
-                <span class="stat-sub"><b><?php echo($analyzedCalls);?></b> have been analyzed</span>
+                <span class="stat-sub"><b><?php echo($analyzedCalls) ?></b> <?php echo($analyzedCalls > 1 ? " have" : " has"); ?> been analyzed</span>
                 <br>
-                <span class="stat-sub"><b><?php echo($verifiedCalls);?></b> have been verified</span>
+                <span class="stat-sub"><b><?php echo($verifiedCalls);?></b> <?php echo($verifiedCalls > 1 ? " have" : " has"); ?> been verified</span>
             </div>
           </div>
         </div>
@@ -144,6 +144,7 @@
                   <label for="date">When did you record this call:</label>
                   <input type="text" class="form-control" name="date_recorded" id="date" placeholder="2017-05-18 14:33:19">
               </div>
+              <div class="loader"></div>
               <div class="options">
                 <button class="btn btn-primary">Upload</button>
                 <button class="btn btn-danger" type="button" id="cancel-upload">Cancel</button>
@@ -169,6 +170,7 @@
         });
         $("#upload_call").submit(function (e) {
           e.preventDefault();
+          $(".loader").toggle();
           $.ajax({
             url: "actions/upload_audio.php",
             type: "POST",

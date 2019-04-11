@@ -29,7 +29,7 @@
       }
 
       $(document).ready(function(){
-          var messages = {'denied': 'Sorry, that username and / or password are incorrect', 'usernameTaken': 'Sorry, that username is already taken.', 'emailTaken': 'Sorry, that email is already taken.', 'invalidSignup': 'Sorry, some data was missing', 'googleSignIn': 'Sorry there was a problem with your google signin, please try again', 'emailUsed': 'There is already an account registered with that email'};
+          var messages = {'denied': 'Sorry, that username and / or password are incorrect', 'usernameTaken': 'Sorry, that username is already taken.', 'emailTaken': 'Sorry, that email is already taken.', 'invalidSignup': 'Sorry, some data was missing', 'serverError': "Sorry there was on a error on a servers, please try again later"};
           $("#mode-button").click(function(){
             toggleForm();
           });
@@ -44,6 +44,13 @@
           if(getParameter == 'denied'){
             toggleForm();
           }
+
+          $("#signup_form").submit(function(event){
+            if($("#password_confirm").val() != $("#password").val()){
+              event.preventDefault();
+              warn("The passwords inserted do not match")
+            }
+          });
 
       });
     </script>
@@ -78,14 +85,14 @@
           </div>
           <div class="signup-box">
             <h2>Signup</h2>
-            <form action="actions/signup.php" method="POST">
+            <form action="actions/signup.php" method="POST" id="signup_form">
                 <p>Username</p>
-                  <input class="form-control" type="text" name="username">
+                <input class="form-control" type="text" name="username">
                 <label for="email">Email:</label>
                 <input class="form-control" type="text" id="email" name="email">
                 <label for="password">Password:</label>
                 <input class="form-control" type="password" name="password" id="password" autocomplete="new-password">
-                <input class="form-control" type="password" name="password-reentered" autocomplete="new-password">
+                <input class="form-control" type="password" name="password-reentered" id="password_confirm" autocomplete="new-password">
                 <input class="btn btn-primary" type="submit" value="Signup">
             </form>
           </div>

@@ -20,11 +20,11 @@
     $check->close();
 
     if($username == $_POST['username']){
-      return array(false, "Sorry that username is taken");
+      return array(false, "usernameTaken");
     }
 
     if($email == $_POST['email']){
-      return array(false, "Sorry that email is taken");
+      return array(false, "emailTaken");
     }
 
     return array(true, "success");
@@ -69,16 +69,14 @@
 
         $user->delete($connection);
 
-        $error = json_decode($e->getMessage());
-
-        header("Location: ../login.php?signupError={$error->error}");
+        header("Location: ../login.php?serverError");
 
       }
 
     }else{
 
       //Either the username or email is already taken
-      header("Location: ../login.php?signupError=" . $check[1]);
+      header("Location: ../login.php?" . $check[1]);
 
     }
 
