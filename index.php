@@ -16,6 +16,7 @@
   <head>
     <title>BatIdentification</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
     <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
@@ -38,19 +39,19 @@
           <div class="col-md-4">
               <div class="info-box">
                 <h3>Contribute calls</h3>
-                <p>Bat calls can be uploaded by any citizen scientist, like you, around the country. Together a repository of calls will be made so that the current state of bat species can be monitored.</p>
+                <p>Bat calls can be uploaded by any citizen scientist, like you, around the country. Together we will create a repository of calls so that the current state of our bat species can be monitored.</p>
               </div>
           </div>
           <div class="col-md-4">
               <div class="info-box">
                 <h3>Identify species</h3>
-                <p>Listen to bat calls and help us decide which specie of bat it is. By crowd-sourcing this information we will be able to more effiently monitor and conserve bat populations.</p>
+                <p>Listen to bat calls and help us decide which species of bat it is. By crowd-sourcing this information we will be able to more efficiently monitor and conserve our bat populations.</p>
               </div>
           </div>
           <div class="col-md-4">
             <div class="info-box">
               <h3>Learn about bats</h3>
-              <p>Get to know these highly interesting species of animals. Become familar with the different kinds of bats, their traits, tastes, and what their role in biodiversity</p>
+              <p>Get to know these highly interesting species of animals. Become familiar with the different kinds of bats, their traits, and what their role in biodiversity is.</p>
             </div>
           </div>
       </div>
