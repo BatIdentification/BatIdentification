@@ -57,12 +57,10 @@ function setupMap(layers){
     if (feature) {
       var coordinates = feature.getGeometry().getCoordinates();
       popup.setPosition(coordinates);
-      content = "Specie: " + feature.get('specie') + "<br>Address: " + feature.get('address');
-      content += feature.get('specie') != "Not identified" ? "<br><a href='call/" + feature.get('id') + "'>More info</a>" : "";
       $(element).popover({
         placement: 'top',
         html: true,
-        content: content,
+        content: "Specie: " + feature.get('specie') + "<br>Address: " + feature.get('address') + "<br><a href='call/" + feature.get('id') + "'>More info</a>"
       });
       $(element).popover('show');
     } else {
