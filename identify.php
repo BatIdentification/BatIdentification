@@ -13,7 +13,7 @@
       function unverifiedCalls(){
 
         global $connection;
-        $sql = "SELECT id, call_url FROM bat_calls WHERE verified IS 0 AND analyzed is true";
+        $sql = "SELECT id, call_url FROM bat_calls WHERE verified IS NULL AND analyzed is true";
         $results = $connection->query($sql);
         return $results;
 
