@@ -15,7 +15,6 @@
     if($_POST['bat-specie'] < sizeof($bat_species)){
       $confirmedSpecie = $bat_species[$_POST['bat-specie']];
       $stmt = $connection->prepare("UPDATE bat_classifications SET {$confirmedSpecie} = {$confirmedSpecie} + 1 WHERE id = ?");
-      var_dump($connection->error);
       $stmt->bind_param("i", $call_id);
       $stmt->execute();
       $stmt->close();
