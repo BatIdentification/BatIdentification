@@ -21,5 +21,5 @@
       </div>
     </div>
   </div>
-  <p class="disclaimer">Copyright © 2018 BatIdentification</p>
+  <p class="disclaimer">Copyright © 2019 BatIdentification</p>
 </footer>
