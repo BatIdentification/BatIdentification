@@ -16,7 +16,7 @@
         <li><a id="/index" href="/">Home</a></li>
         <li><a id="about" href="/data">Data</a></li>
         <li><a id="brand-title">BatIdentification</a>
-        <li><a href="identify" id="identify">Identify</a></li>
+        <li><a id="identify" href="/identify">Identify</a></li>
         <?php if(isset($_SESSION['id'])) : ?>
           <li><a href="/profile" id="profile"><?php echo($_SESSION['username']); ?></a></li>
         <?php else : ?>
