@@ -57,10 +57,12 @@ function setupMap(layers){
     if (feature) {
       var coordinates = feature.getGeometry().getCoordinates();
       popup.setPosition(coordinates);
+      content = "Specie: " + feature.get('specie') + "<br>Address: " + feature.get('address');
+      content += feature.get('analyzed') == 1 ? "<br><a href='call/" + feature.get('id') + "'>More info</a>" : "";
       $(element).popover({
         placement: 'top',
         html: true,
-        content: "Specie: " + feature.get('specie') + "<br>Address: " + feature.get('address') + "<br><a href='call/" + feature.get('id') + "'>More info</a>"
+        content: content,
       });
       $(element).popover('show');
     } else {
@@ -98,6 +100,7 @@ function getFeatures(url, params, callback){
         name: batCall['lng'] + batCall['lat'],
         specie: batCall['species'],
         address: batCall['address'],
+        analyzed: batCall['analyzed'],
         id: batCall['id'],
       });
 
