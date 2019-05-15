@@ -1,5 +1,7 @@
 html, body{
-  height:100%;
+  min-height:100%;
+  margin:0;
+
 }
 
 body{
@@ -56,6 +58,16 @@ body{
 
   .boxes > .col-md-4 > .info-box{
     width:60%;
+  }
+
+  .data-container > .row{
+    display: block !important;
+  }
+
+  .data-container > .row > .side-bar{
+    margin-top: 1%;
+    margin-left: 15px !important;
+    width: auto !important;
   }
 
 }
@@ -157,7 +169,7 @@ body{
 
 .profile-header{
   background-color:#cbc8b3;
-  height:20%;
+  height:35%;
 }
 
 .profile-header > .col-md-12{
@@ -376,10 +388,8 @@ footer .footer-section ul{
 
 }
 
-.data-container > .row, .data-container > .row > .col-md-9, .data-container > .row > .col-md-3{
-
-  height:95%;
-
+.data-container > .row{
+  display: flex;
 }
 
 .data-container > .row > .col-md-3{

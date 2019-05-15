@@ -87,7 +87,7 @@ function getFeatures(url, params, callback){
 
   var vectorFeatures = [];
 
-  $.post(url, params, function(response){
+  $.get(url, params, function(response){
 
     for(var i = 0; i < response['calls'].length; i++){
 
